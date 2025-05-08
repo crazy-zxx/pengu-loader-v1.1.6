@@ -2,7 +2,7 @@
 
 ## 介绍
 
-> 项目文件来自 [https://github.com/PenguLoader/PenguLoader](https://github.com/PenguLoader/PenguLoader) 的官方 [v1.16 版本](https://github.com/PenguLoader/PenguLoader/releases/download/v1.1.6/pengu-loader-v1.1.6-setup.exe) ，做了一些配置，集成了几个有用的插件。
+> 项目文件来自 [https://github.com/PenguLoader/PenguLoader](https://github.com/PenguLoader/PenguLoader) 的官方 [v1.16 版本](https://github.com/PenguLoader/PenguLoader/releases/download/v1.1.6/pengu-loader-v1.1.6.zip) ，做了一些配置，集成了几个有用的插件。
 
 ### config 文件
 
