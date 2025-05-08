@@ -1,0 +1,4 @@
+Language=中文
+OptimizeClient=false
+DisableWebSecurity=1
+IgnoreCertificateErrors=1
