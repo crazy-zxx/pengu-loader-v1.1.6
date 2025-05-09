@@ -32,6 +32,9 @@ export function init(context) {
       const { playerResponse, state } = message.data;
       // 找到匹配的对局，对局处于就绪状态，并且当前还未接受对局，并且客户端正在等待我们的响应
       if (state === 'InProgress' && !hasAccepted && playerResponse === 'None') {
+        
+        // 稍微延迟接受 
+        await new Promise((resolve) => setTimeout(resolve, 150));
 
         if (!hasAccepted) {         
           try {
