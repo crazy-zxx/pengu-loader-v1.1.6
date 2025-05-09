@@ -33,28 +33,24 @@ export function init(context) {
       // 找到匹配的对局，对局处于就绪状态，并且当前还未接受对局，并且客户端正在等待我们的响应
       if (state === 'InProgress' && !hasAccepted && playerResponse === 'None') {
 
-        if (!hasAccepted) {
-          // 标记接受已开始，避免重复触发
-          hasAccepted = true;
-          
-          // 延时 1s 接受对局，给用户反悔的机会
-          setTimeout(async () => {
-            try {
-              // 发送接受对局的请求
-              const response = await fetch('/lol-matchmaking/v1/ready-check/accept', { method: 'POST' });
-              // 成功接受对局
-              if (response.ok) {
-                console.log('成功自动接受对局！');
-                Toast.success('成功自动接受对局！');
-              }
-            } catch (e) {
-              console.error('接受失败', e);
-              Toast.error('自动接受对局出错！');
-            } finally {
-              // 重置对局接受状态
-              resetState();
+        if (!hasAccepted) {         
+          try {
+            // 发送接受对局的请求
+            const response = await fetch('/lol-matchmaking/v1/ready-check/accept', { method: 'POST' });
+            // 成功接受对局
+            if (response.ok) {
+              // 标记接受已开始，避免重复触发
+              hasAccepted = true;
+              console.log('成功自动接受对局！');
+              Toast.success('成功自动接受对局！');
             }
-          }, 1000);
+          } catch (e) {
+            console.error('接受失败', e);
+            Toast.error('自动接受对局出错！');
+          } finally {
+            // 重置对局接受状态
+            resetState();
+          }
         }
 
       } else if (state !== 'InProgress' && hasAccepted) {
