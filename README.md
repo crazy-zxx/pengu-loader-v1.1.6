@@ -36,4 +36,4 @@ IgnoreCertificateErrors=1
 
 ## 使用
 
-直接下载该仓库的[压缩包](https://github.com/crazy-zxx/pengu-loader-v1.1.6/archive/refs/tags/v1.0.zip)，或者克隆代码到本地，执行目录中的 `Pengu Loader.exe` 文件即可。
+直接下载该仓库的[压缩包](https://github.com/crazy-zxx/pengu-loader-v1.1.6/archive/refs/tags/v2.0.zip)，或者克隆代码到本地，执行目录中的 `Pengu Loader.exe` 文件即可。
