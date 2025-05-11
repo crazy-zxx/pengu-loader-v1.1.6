@@ -41,7 +41,7 @@ IgnoreCertificateErrors=1
 
 ## 注意
 
-`自动接受对局插件 SimpleAccept.js`可能有点小问题，有时候插件不起作用，不知道啥原因。
+`自动接受对局插件 SimpleAccept.js`可能有点小问题，第一次打开联盟时候插件不起作用，不知道啥原因。
 
 需要打开联盟后，手动切换一下 `PenguLoader` 的启用状态，来重新加载一下才行。
 
