@@ -24,7 +24,7 @@ IgnoreCertificateErrors=1
 
 > 自动补充乱斗骰子插件： `auto-fill-dice.js` 来自 [Discord 论坛的 vatchingfun](https://discord.com/channels/1069483280438673418/1077886267464892468/threads/1365610922046918716) 。
 
-> 自动接受对局插件：`SimpleAccept.js` 来自 [Discord 论坛的 Kubi ](https://discord.com/channels/1069483280438673418/1077886267464892468/threads/1351259643753664627) 。
+> 自动接受对局插件：`autoaccept.js` 来自 [Discord 论坛的 ashera ](https://discord.com/channels/1069483280438673418/1077886267464892468/threads/1371799042832597054) 。
 
 > 屏蔽联盟比赛窗口插件：`Block_match_live.js` 来自 [Discord 论坛的 Pual](https://discord.com/channels/1069483280438673418/1077886267464892468/threads/1354072649306865695) 。
 
@@ -37,11 +37,4 @@ IgnoreCertificateErrors=1
 ## 使用
 
 直接下载该仓库的[压缩包](https://github.com/crazy-zxx/pengu-loader-v1.1.6/archive/refs/tags/v2.0.zip)，或者克隆代码到本地，执行目录中的 `Pengu Loader.exe` 文件即可。
-
-
-## 注意
-
-`自动接受对局插件 SimpleAccept.js`可能有点小问题，第一次打开联盟的时候插件不起作用，不知道啥原因。
-
-需要打开联盟后，手动切换一下 `PenguLoader` 的启用状态，来重新加载一下才行。
 
