@@ -8,6 +8,8 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   console.log("[Pengu Loader] Auto Accept plugin loaded");
+
+  Toast.success('自动接受对局插件已加载！');
   
   let styleElement = null;
   let originalTexts = [];
