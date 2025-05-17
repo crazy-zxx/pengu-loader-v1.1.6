@@ -4,6 +4,9 @@
  * @description Auto queue accepter with switches for hiding the match found dialog and auto accepting the match
  * @version 1.0.0
  * @link https://github.com/asherathegod/penguplugins
+ * 
+ * @author zxx
+ * @description 调整设置界面的显示位置，避免大乱斗模式的骰子显示遮挡；修改接受对局的延时为2秒，默认不隐藏找到对局时的接受窗口，给用户取消的机会
  */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -23,9 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let lastKnownLobbyState = null;
   
   // Configuration settings with defaults
+  // 自动接受对局、不隐藏找到对局的接受窗口
   let settings = {
     autoAccept: localStorage.getItem('pengu_autoAccept') === 'true' || true,
-    hideDialog: localStorage.getItem('pengu_hideDialog') === 'true' || true
+    hideDialog: localStorage.getItem('pengu_hideDialog') === 'false' || false
   };
 
   console.log("[Pengu Loader] Auto Accept settings:", settings);
@@ -40,6 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
       display: flex !important;
       margin: 5px auto !important;
       width: auto !important;
+      top: -520px;
+      left: 300px;
+      z-index: 9999 !important;
     }
     .pengu-switch-container {
       display: flex !important;
@@ -432,8 +439,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // Only make API call if autoAccept is enabled
+      // 延时 2秒接 受对局
       if (settings.autoAccept) {
-        console.log("[Pengu Loader] Auto accepting in 9.5 seconds");
+        console.log("[Pengu Loader] Auto accepting in 2 seconds");
         apiCallTimeout = setTimeout(() => {
           fetch('/lol-matchmaking/v1/ready-check/accept', {
             method: 'POST'
@@ -446,7 +454,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }).catch(error => {
             console.log("[Pengu Loader] Error accepting match:", error);
           });
-        }, 9500);
+        }, 2000);
       }
     } else if (!dialogLargeElement && styleElement) {
       if (styleElement) {
