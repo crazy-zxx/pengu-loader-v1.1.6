@@ -44,9 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       display: flex !important;
       margin: 5px auto !important;
       width: auto !important;
-      top: -520px;
-      left: 300px;
-      z-index: 9999 !important;
+      left: 200px;
     }
     .pengu-switch-container {
       display: flex !important;
@@ -307,33 +305,24 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("[Pengu Loader] Creating switches...");
     
     // Try to find potential locations for switches
-    const locations = [
-      document.querySelector('.v2-footer-notifications'),
-      document.querySelector('.parties-footer-warning'), 
-      document.querySelector('.center-container'),
-      document.querySelector('.parties-footer'),
-      document.querySelector('.find-match-button')?.parentElement
-    ].filter(loc => loc !== null);
-    
-    if (locations.length === 0) {
-      console.log("[Pengu Loader] Could not find any suitable location for switches");
+    // 修改设置界面的显示位置
+    const targetContainer = document.querySelector('.lobby-header-content');
+    if (!targetContainer) {
+      console.log("[Pengu Loader] The lobby-header-content container was not found");
       return;
     }
-    
-    // Create switches container
+
     const switchesContainer = createSwitchesContainer();
-    
-    // Try each location
-    for (const location of locations) {
-      try {
-        location.prepend(switchesContainer);
-        console.log("[Pengu Loader] Added switches to", location);
-        switchesCreated = true;
-        return;
-      } catch (e) {
-        console.log("[Pengu Loader] Failed to add switches to", location, e);
-      }
+    // 插入到最后一个元素之前
+    const lastElement = targetContainer.lastElementChild;
+    if (lastElement) {
+      targetContainer.insertBefore(switchesContainer, lastElement);
+    } else {
+      // 如果没有子元素，请将它们直接添加到容器中
+      targetContainer.appendChild(switchesContainer);
     }
+    switchesCreated = true;
+    console.log("[Pengu Loader] A pengu-switches has been added to lobby-header-content");
   }
   
   function createSwitchesContainer() {
@@ -439,7 +428,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // Only make API call if autoAccept is enabled
-      // 延时 2秒接 受对局
+      // 延时 2秒 接受对局
       if (settings.autoAccept) {
         console.log("[Pengu Loader] Auto accepting in 2 seconds");
         apiCallTimeout = setTimeout(() => {
