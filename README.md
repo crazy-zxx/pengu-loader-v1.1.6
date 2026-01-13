@@ -22,7 +22,7 @@ IgnoreCertificateErrors=1
 
 存放了一些好用的插件：
 
-> 自动补充乱斗骰子插件： `auto-fill-dice.js` 来自 [Discord 论坛的 vatchingfun](https://discord.com/channels/1069483280438673418/1077886267464892468/threads/1365610922046918716) 。
+> ~~自动补充乱斗骰子插件： `auto-fill-dice.js` 来自 [Discord 论坛的 vatchingfun](https://discord.com/channels/1069483280438673418/1077886267464892468/threads/1365610922046918716) 。~~  游戏模式已经不存在！
 
 > 自动接受对局插件：`autoaccept.js` 来自 [Discord 论坛的 ashera ](https://discord.com/channels/1069483280438673418/1077886267464892468/threads/1371799042832597054) ，重新调整了设置界面的显示位置，避免大乱斗模式的骰子显示遮挡；修改接受对局的延时为2秒，默认不隐藏找到对局时的接受窗口，给用户取消的机会。
 
