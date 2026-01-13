@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       display: flex !important;
       margin: 5px auto !important;
       width: auto !important;
-      left: 200px;
+      left: 100px;
     }
     .pengu-switch-container {
       display: flex !important;
